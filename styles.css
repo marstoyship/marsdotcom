@@ -1,11 +1,11 @@
 @font-face {
   font-family: "AlbertSans";
-  src: url(/AlbertSans.woff2);
+  src: url(/assets/AlbertSans.woff2);
 }
 
 @font-face {
   font-family: "SourceSans3";
-  src: url(/SourceSans3.woff2);
+  src: url(/assets/SourceSans3.woff2);
 }
 
 @layer base {
