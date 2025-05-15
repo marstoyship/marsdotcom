@@ -1,0 +1,49 @@
+@font-face {
+  font-family: "AlbertSans";
+  src: url(/AlbertSans.woff2);
+}
+
+@font-face {
+  font-family: "SourceSans3";
+  src: url(/SourceSans3.woff2);
+}
+
+@layer base {
+  :root {
+    --max-page-width: 80rem; /* 1280px */
+    --accent-color: #C21F0A;
+    --bullet-color: #E04E2B;
+  }
+
+  body {
+    font-family: "SourceSans3", Helvetica, sans-serif;
+    font-size: clamp(1rem, calc(1.72vw + 0.25ch), 1.5rem);
+    font-weight: 366;
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, h4, h5, h6, nav {
+    font-family: "AlbertSans", Helvetica, sans-serif;
+    line-height: 1.4;
+  }
+
+  h1 {
+    font-size: 2.5em;
+    font-weight: 600;
+    letter-spacing: -1%;
+  }
+
+  a {
+    color: var(--accent-color);
+  }
+
+  li::marker {
+    color: var(--bullet-color);
+  }
+
+  nav :is(ol, ul) {
+    font-size: 0.835em;
+    font-weight: 700;
+    list-style-type: none;
+  }
+}
