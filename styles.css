@@ -253,6 +253,10 @@
       text-decoration: none;
     }
 
+    & a[aria-current="page"] {
+      text-decoration: underline;
+    }
+
     & .callout {
       color: black;
     }
