@@ -1,16 +1,6 @@
 @layer reset, base, layout, component, override;
 
-@font-face {
-  font-family: "AlbertSans";
-  src: url(/assets/AlbertSans.woff2);
-}
-
-@font-face {
-  font-family: "SourceSans3";
-  src: url(/assets/SourceSans3.woff2);
-}
-
-@layer reset {
+@layer reset { /* {{{ */
   /* Box sizing rules */
   *,
   *::before,
@@ -84,9 +74,19 @@
   :target {
     scroll-margin-block: 5ex;
   }
-}
+} /* }}} */
 
-@layer base {
+@layer base { /* {{{ */
+  @font-face {
+    font-family: "AlbertSans";
+    src: url(/assets/AlbertSans.woff2);
+  }
+
+  @font-face {
+    font-family: "SourceSans3";
+    src: url(/assets/SourceSans3.woff2);
+  }
+
   :root {
     --max-page-width: 80rem; /* 1280px */
     --accent-color: #C21F0A;
@@ -124,13 +124,16 @@
     font-weight: 700;
     list-style-type: none;
   }
-}
+} /* }}} */
 
-@layer layout {
+@layer layout { /* {{{ */
   .layout-horizontal {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
     gap: 3ch;
   }
-}
+} /* }}} */
+
+/* vim: fdm=marker
+ */
