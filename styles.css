@@ -174,10 +174,14 @@
   .main-navigation ul {
     display: flex;
     align-items: center;
-    gap: 1em;
 
     & .logo {
       margin-inline-end: auto;
+    }
+
+    & li:not(.logo) + li::before {
+      content: "•";
+      padding-inline: 1ch;
     }
   }
 
