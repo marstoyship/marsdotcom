@@ -1,4 +1,4 @@
-@layer reset, base, layout, component, override;
+@layer reset, base, layout, utility, component, override;
 
 @layer reset { /* {{{ */
   /* Box sizing rules */
@@ -70,6 +70,11 @@
     min-height: 10em;
   }
 
+  /* Make sure hidden property works on all elements, including SVG. */
+  [hidden] {
+    display: none;
+  }
+
   /* Anything that has been anchored to should have extra scroll margin */
   :target {
     scroll-margin-block: 5ex;
@@ -123,6 +128,18 @@
     font-size: 0.835em;
     font-weight: 700;
     list-style-type: none;
+  }
+} /* }}} */
+
+@layer utility { /* {{{ */
+  .visually-hidden:not(:focus):not(:active) {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
   }
 } /* }}} */
 
