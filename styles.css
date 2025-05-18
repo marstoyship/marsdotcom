@@ -154,21 +154,61 @@
   body > header {
     display: grid;
     grid-template-areas:
-      " . nav nav nav nav . "
-      " . . title . portrait . ";
-    grid-template-rows: 1lh max-content;
+      " . nav . "
+      " . title . "
+      " . callout . "
+      " . portrait . ";
+    grid-template-rows: calc(1.666em + 1lh + 2.5em) repeat(2, auto);
+    gap: 0 1ch;
+
+    & .mars-background {
+      grid-column: 1 / -1;
+      grid-row: 1 / span 2;
+    }
 
     & .main-navigation {
       grid-area: nav;
+      align-self: center;
     }
 
     & > h1 {
       grid-area: title;
+      padding-block-end: 0.45lh;
     }
 
-    & > img {
+    & .portrait {
       grid-area: portrait;
+      object-fit: contain;
+      object-position: top;
     }
+
+    & .callout {
+      grid-area: callout;
+      margin-block: 0.65lh;
+    }
+  }
+
+  @media screen and (width >= 41.25em) {
+    body > header {
+      grid-template-areas:
+        " . nav nav nav nav . "
+        " . . title . portrait . "
+        " . . callout . portrait .";
+      grid-template-columns: auto  auto  23.57em auto 15.125rem auto;
+
+      & > .portrait {
+        padding-inline-start: 0;
+        object-position: center;
+      }
+
+      & > .callout {
+        margin-block-end: 0;
+      }
+    }
+  }
+
+  .page-home > header {
+    grid-template-columns: unset;
   }
 
   .main-navigation ul {
@@ -177,6 +217,16 @@
 
     & .logo {
       margin-inline-end: auto;
+
+      & a {
+        display: flex;
+        align-items: center;
+        gap: 1ch;
+      }
+
+      & svg {
+        inline-size: 1.5em;
+      }
     }
 
     & li:not(.logo) + li::before {
@@ -196,17 +246,22 @@
 @layer component { /* {{{ */
   body > header,
   body > footer {
-    padding-block: 1.666em 2.5em;
-    background-color: var(--accent-color);
-    background-image: url(/assets/bg-mars.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
     color: white;
 
     & a {
       color: white;
       text-decoration: none;
     }
+
+    & .callout {
+      color: black;
+    }
+  }
+
+  .mars-background {
+    background-color: var(--accent-color);
+    background-image: url(/assets/bg-mars.jpg);
+    background-size: cover;
   }
 
   .callout {
