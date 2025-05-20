@@ -264,7 +264,7 @@
 
   .mars-background {
     background-color: var(--accent-color);
-    background-image: url(/assets/bg-mars.jpg);
+    background-image: url(assets/bg-mars.jpg);
     background-size: cover;
   }
 
