@@ -92,6 +92,10 @@
     src: url(/assets/SourceSans3.woff2);
   }
 
+  @view-transition {
+    navigation: auto;
+  }
+
   :root {
     --max-page-width: 80rem; /* 1280px */
     --accent-color: #C21F0A;
