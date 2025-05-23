@@ -112,6 +112,7 @@
 
   h1, h2, h3, h4, h5, h6, nav {
     font-family: "AlbertSans", Helvetica, sans-serif;
+    text-wrap: balance;
   }
 
   h1 {
