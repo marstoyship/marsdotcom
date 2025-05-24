@@ -16,9 +16,13 @@
   }
 
   /* Remove default margin in favour of better control in authored CSS */
-  body, h1, h2, h3, h4, p,
+  body, h1, h2, h3, h4,
   figure, blockquote, dl, dd {
     margin-block-end: 0;
+  }
+
+  p {
+    margin-block: 0;
   }
 
   /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
@@ -99,13 +103,14 @@
   :root {
     --max-page-width: 80rem; /* 1280px */
     --accent-color: #C21F0A;
+    --background-color-light: #e7e4d3;
     --bullet-color: #E04E2B;
-    font-size: clamp(1rem, calc(1.72vw + 0.25ch), 1.5rem);
   }
 
   body {
     margin: 0;
     font-family: "SourceSans3", Helvetica, sans-serif;
+    font-size: clamp(1rem, calc(1.72vw + 0.25ch), 1.5rem);
     font-weight: 366;
     line-height: 1.6;
   }
@@ -119,6 +124,10 @@
     font-size: 2.5em;
     font-weight: 600;
     letter-spacing: -1%;
+  }
+
+  p + p {
+    margin-block-start: 1lh;
   }
 
   a {
@@ -151,11 +160,6 @@
 } /* }}} */
 
 @layer layout { /* {{{ */
-  body > header > *,
-  body > footer > * {
-    padding-inline: 1rem;
-  }
-
   body > header {
     display: grid;
     grid-template-areas:
@@ -164,7 +168,7 @@
       " . callout . "
       " . portrait . ";
     grid-template-rows: calc(1.666em + 1lh + 2.5em) repeat(2, auto);
-    gap: 0 1ch;
+    gap: 0 1rem;
 
     & .mars-background {
       grid-column: 1 / -1;
@@ -199,7 +203,7 @@
         " . nav nav nav nav . "
         " . . title . portrait . "
         " . . callout . portrait .";
-      grid-template-columns: auto  auto  23.57em auto 15.125rem auto;
+      grid-template-columns: auto  auto  35.57em auto 15.125rem auto;
 
       & > .portrait {
         padding-inline-start: 0;
@@ -213,7 +217,11 @@
   }
 
   .page-home > header {
-    grid-template-columns: unset;
+    grid-template-areas:
+      " . nav . "
+      " . title . "
+      " . callout . ";
+    grid-template-columns: 1fr minmax(auto, 55rem) 1fr;
   }
 
   .main-navigation ul {
@@ -252,6 +260,7 @@
   body > header,
   body > footer {
     color: white;
+    background-color: var(--accent-color);
 
     & a {
       color: white;
@@ -265,6 +274,32 @@
     & .callout {
       color: black;
     }
+  }
+
+  .page-me > header {
+    background-color: white;
+  }
+
+  .page-my-work > header {
+    background-color: var(--background-color-light);
+  }
+
+  #main-content section {
+    padding-inline: 1rem;
+    padding-block: 3.75rem;
+
+    & > * {
+      max-inline-size: 55rem;
+      margin-inline: auto;
+    }
+  }
+
+  .section-white {
+    background-color: white;
+  }
+
+  .section-light {
+    background-color: var(--background-color-light);
   }
 
   .mars-background {
