@@ -306,6 +306,7 @@
     background-color: var(--accent-color);
     background-image: url(/assets/bg-mars.jpg);
     background-size: cover;
+    background-attachment: fixed;
   }
 
   .callout {
