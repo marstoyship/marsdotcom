@@ -260,6 +260,8 @@
 } /* }}} */
 
 @layer component { /* {{{ */
+  /* Page {{{2 */
+
   body > header,
   body > footer {
     color: white;
@@ -287,7 +289,7 @@
     background-color: var(--background-color-light);
   }
 
-  #main-content section {
+  :where(#main-content section) {
     padding-inline: 1rem;
     padding-block: 3.75rem;
 
@@ -312,10 +314,18 @@
     background-attachment: fixed;
   }
 
+  /* }}} */
+
+  /* Callout {{{2 */
+
   .callout {
     font-size: 1.667em;
     font-weight: 320;
   }
+
+  /* }}} */
+
+  /* Card {{{2 */
 
   .card-quote,
   .card {
@@ -357,6 +367,10 @@
   .card__description {
     margin-block-start: 1em;
   }
+
+  /* }}} */
+
+  /* Card quote {{{2 */
 
   .card-quote {
     padding-block-start: 1rem;
@@ -420,6 +434,10 @@
     color: var(--secondary-accent-color);
   }
 
+  /* }}} */
+
+  /* CTA {{{2 */
+
   .cta {
     display: flex;
     align-items: center;
@@ -438,9 +456,36 @@
     }
   }
 
+  /* }}} */
+
+  /* Icon list {{{2 */
+
+  .icon-list {
+    font-size: 1.25em;
+    font-weight: 600;
+    padding-inline-start: 0;
+    margin-block-start: 4.16em;
+    gap: 3ch;
+    max-inline-size: 65rem;
+
+    & > li {
+      display: flex;
+      flex-flow: column nowrap;
+      align-items: center;
+      max-inline-size: 9ch;
+      gap: 1.58em;
+    }
+  }
+
+  /* }}} */
+
+  /* Footer {{{2 */
+
   footer .cta {
     font-size: 1.315em;
   }
+
+  /* }}} */
 } /* }}} */
 
 /* vim: fdm=marker
