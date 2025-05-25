@@ -498,7 +498,6 @@
 
   .site-footer {
     position: relative;
-    display: grid;
     padding-block: 4.5em 2.29em;
     padding-inline: 4.16em;
     grid-template-columns: auto min-content;
@@ -516,6 +515,42 @@
       max-inline-size: 55rem;
       font-size: 1.315em;
       padding-block: 1.1em;
+    }
+
+    & h2 {
+      margin-block-start: 3.875em;
+    }
+
+    & .contact {
+      margin-block-start: 2.2em;
+    }
+  }
+
+  .social-list {
+    font-weight: 700;
+    font-size: 0.8em;
+    padding-inline-start: 0;
+    inline-size: max-content;
+    margin-block-start: 2.2em;
+
+    & > li + li {
+      margin-block-start: 1.5em;
+    }
+
+    & > li a {
+      display: flex;
+      align-items: center;
+      gap: 1ch;
+    }
+  }
+
+  @media screen and (width >= 25em) {
+    .site-footer {
+      display: grid;
+    }
+
+    .social-list {
+      margin-block-start: 0.8rem;
     }
   }
 
