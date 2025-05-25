@@ -319,35 +319,43 @@
 
   .card-quote,
   .card {
-    margin-block-start: 3.75rem;
+    margin-block-start: 2.5em;
   }
 
   .card {
-    display: grid;
-    grid-template-areas:
-      "image title"
-      "image description"
-      "image cta-top"
-      "image cta-bottom";
-    grid-template-columns: 20rem 1fr;
-    column-gap: 2.5rem;
+    position: relative;
+    background-color: white;
 
     & > img {
       grid-area: image;
+      block-size: 100%;
+      inline-size: 100%;
+      object-fit: cover;
     }
 
     & > .cta {
-      grid-row-start: cta-top;
-      grid-row-end: cta-bottom;
+      position: absolute;
+      inset-inline-end: 0;
+      inset-block-end: -1.25em;
     }
   }
 
-  .card__title {
-    grid-area: title;
+  @media screen and (width >= 34em) {
+    .card {
+      display: grid;
+      grid-template-areas: "image content";
+      grid-template-columns: 20rem 1fr;
+    }
+  }
+
+  .card__content {
+    grid-area: content;
+    padding-inline: 1.6em;
+    padding-block-end: 2.16em;
   }
 
   .card__description {
-    grid-area: description;
+    margin-block-start: 1em;
   }
 
   .card-quote {
