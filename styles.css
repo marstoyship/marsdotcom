@@ -58,8 +58,9 @@
   /* Make images easier to work with */
   img,
   picture {
-    max-width: 100%;
     display: block;
+    block-size: auto;
+    max-inline-size: 100%;
   }
 
   /* Inherit fonts for inputs and buttons */
@@ -71,7 +72,7 @@
 
   /* Make sure textareas without a rows attribute are not tiny */
   textarea:not([rows]) {
-    min-height: 10em;
+    min-block-size: 10em;
   }
 
   /* Make sure hidden property works on all elements, including SVG. */
@@ -102,21 +103,23 @@
 
   :root {
     --max-page-width: 80rem; /* 1280px */
-    --accent-color: #C21F0A;
+    --primary-accent-color: #C21F0A;
+    --secondary-accent-color: #e04e2b;
     --background-color-light: #e7e4d3;
-    --bullet-color: #E04E2B;
+    --source-sans: "SourceSans3", Helvetica, Arial, sans-serif;
+    --albert-sans: "AlbertSans", Helvetica, Arial, sans-serif;
   }
 
   body {
     margin: 0;
-    font-family: "SourceSans3", Helvetica, sans-serif;
+    font-family: var(--source-sans);
     font-size: clamp(1rem, calc(1.72vw + 0.25ch), 1.5rem);
     font-weight: 366;
     line-height: 1.6;
   }
 
-  h1, h2, h3, h4, h5, h6, nav {
-    font-family: "AlbertSans", Helvetica, sans-serif;
+  h1, h2, h3, h4, h5, h6, nav, .cta {
+    font-family: var(--albert-sans);
     text-wrap: balance;
   }
 
@@ -131,11 +134,11 @@
   }
 
   a {
-    color: var(--accent-color);
+    color: var(--primary-accent-color);
   }
 
   li::marker {
-    color: var(--bullet-color);
+    color: var(--secondary-accent-color);
   }
 
   nav :is(ol, ul) {
@@ -260,7 +263,7 @@
   body > header,
   body > footer {
     color: white;
-    background-color: var(--accent-color);
+    background-color: var(--primary-accent-color);
 
     & a {
       color: white;
@@ -303,7 +306,7 @@
   }
 
   .mars-background {
-    background-color: var(--accent-color);
+    background-color: var(--primary-accent-color);
     background-image: url(/assets/bg-mars.jpg);
     background-size: cover;
     background-attachment: fixed;
@@ -313,7 +316,124 @@
     font-size: 1.667em;
     font-weight: 320;
   }
+
+  .card-quote + *,
+  .card + * {
+    margin-block-start: 3.75rem;
+  }
+
+  .card {
+    display: grid;
+    grid-template-areas:
+      "image title"
+      "image description"
+      "image cta-top"
+      "image cta-bottom";
+    grid-template-columns: 20rem 1fr;
+    column-gap: 2.5rem;
+
+    & > img {
+      grid-area: image;
+    }
+
+    & > .cta {
+      grid-row-start: cta-top;
+      grid-row-end: cta-bottom;
+    }
+  }
+
+  .card__title {
+    grid-area: title;
+  }
+
+  .card__description {
+    grid-area: description;
+  }
+
+  .card-quote {
+    padding-block-start: 1rem;
+    background-color: white;
+    border: 1px solid var(--secondary-accent-color);
+
+    & blockquote {
+      margin-inline: 0;
+      margin-block: 1.5em 1em;
+    }
+
+    & blockquote::before {
+      content: '“';
+      display: block;
+      font-family: var(--albert-sans);
+      font-size: 1.8333em;
+      line-height: 1;
+      color: var(--secondary-accent-color);
+    }
+  }
+
+  .card-quote__content {
+    grid-area: content;
+    margin-inline: 2.5rem;
+    margin-block-end: 1rem;
+
+    & > p {
+      font-size: 0.75em;
+      font-weight: 366;
+    }
+  }
+
+  .card-quote__image {
+    grid-area: image;
+    inline-size: 100%;
+    block-size: 100%;
+    object-fit: cover;
+    margin-block-start: 1.25rem;
+  }
+
+  @media screen and (width >= 42rem) {
+    .card-quote {
+      display: grid;
+      grid-template-areas: "content image";
+      grid-template-columns: 1fr 20rem;
+      padding-block: 0;
+    }
+
+    .card-quote__image {
+      margin-block-start: 0;
+      margin-inline: 0;
+    }
+  }
+
+  cite {
+    font-style: normal;
+  }
+
+  cite span + span::before {
+    content: " • ";
+    color: var(--secondary-accent-color);
+  }
+
+  .cta {
+    display: flex;
+    align-items: center;
+    gap: 1ch;
+    padding-inline: 1.4em;
+    padding-block: 0.75em;
+    font-size: 0.9em;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+    background-color: black;
+
+    & > svg {
+      inline-size: 1.15em;
+      block-size: 0.75em;
+    }
+  }
+
+  footer .cta {
+    font-size: 1.315em;
+  }
 } /* }}} */
 
 /* vim: fdm=marker
- */
+*/

@@ -8,7 +8,7 @@
   </head>
   <body class="page-home">
     <svg xmlns="http://www.w3.org/2000/svg" hidden>
-      <symbol id="arrow-icon" width="36" height="23" viewBox="0 0 36 23" aria-hidden="true"><path fill="#E04E2B" d="M36 11.5c0-.28-.168-.652-.338-.832l-9.6-10.29A1.195 1.195 0 0 0 24.365.33c-.467.424-.479 1.25-.047 1.711l7.706 8.247H1.2c-.663 0-1.2.542-1.2 1.21 0 .67.537 1.211 1.2 1.211h30.824l-7.706 8.247c-.432.46-.401 1.267.047 1.712.473.47 1.256.427 1.697-.047l9.6-10.29c.282-.279.333-.548.338-.832"/></symbol>
+      <symbol id="arrow-icon" viewBox="0 0 36 23" aria-hidden="true"><path fill="#E04E2B" d="M36 11.5c0-.28-.168-.652-.338-.832l-9.6-10.29A1.195 1.195 0 0 0 24.365.33c-.467.424-.479 1.25-.047 1.711l7.706 8.247H1.2c-.663 0-1.2.542-1.2 1.21 0 .67.537 1.211 1.2 1.211h30.824l-7.706 8.247c-.432.46-.401 1.267.047 1.712.473.47 1.256.427 1.697-.047l9.6-10.29c.282-.279.333-.548.338-.832"/></symbol>
     </svg>
     <a class="visually-hidden" href="#main-content">Skip to main content</a>
     <header>
@@ -59,19 +59,21 @@
         <h2>A few recent projects & clients.</h2>
         <div class="card">
           <img src="./assets/grid-iowa.jpg" width="320" height="320" alt="The Great Seal of the State of Iowa">
-          <h3>State of Iowa</h3>
-          <p>We built a single flexible government platform & dozens of cohesive navigation systems, serving over 50 state agencies. I conducted research, workshops, content modeling, site architecture, UI refinement, user feedback, & training.</p>
+          <h3 class="card__title">State of Iowa</h3>
+          <p class="card__description">We built a single flexible government platform & dozens of cohesive navigation systems, serving over 50 state agencies. I conducted research, workshops, content modeling, site architecture, UI refinement, user feedback, & training.</p>
           <a class="cta" href="https://iowa.gov"><span>Iowa.gov</span><svg><use href="#arrow-icon"></use></svg></a>
         </div>
-        <div class="card">
-          <blockquote>Working with Marissa on the AIChE website overhaul was one of the best experiences in my career. Marissa is thoughtful, organized, super creative, and very talented... I highly recommend Marissa in all UX capacities.</blockquote>
-          <p><cite><span>John Vasko</span> <span>Director of Content Strategy, <abbr>AIChE</abbr> (Client)</span></cite></p>
-          <img src="./assets/john-vasko.jpg" width="320" height="318" alt="Portrait photo of John Vasko, a gently smiling white man wearing glasses and a shirt and tie.">
+        <div class="card-quote">
+          <div class="card-quote__content">
+            <blockquote>Working with Marissa on the AIChE website overhaul was one of the best experiences in my career. Marissa is thoughtful, organized, super creative, and very talented... I highly recommend Marissa in all UX capacities.</blockquote>
+            <p><cite><span>John Vasko</span> <span>Director of Content Strategy, <abbr>AIChE</abbr> (Client)</span></cite></p>
+          </div>
+          <img class="card-quote__image" src="./assets/john-vasko.jpg" width="320" height="318" alt="Portrait photo of John Vasko, a gently smiling white man wearing glasses and a shirt and tie.">
         </div>
         <div class="card">
           <img src="./assets/grid-gpb.jpg" width="320" height="320" alt="GPB logo. Also shows NPR and PBS logos.">
-          <h3>Georgia Public Broadcasting</h3>
-          <p>This collaboration unified unique audience experiences across many sources & platforms in one redesigned hub. I led phases of discovery, user research, wireframing, navigation, interface design, CMS architecture & taxonomy.</p>
+          <h3 class="card__title">Georgia Public Broadcasting</h3>
+          <p class="card__description">This collaboration unified unique audience experiences across many sources & platforms in one redesigned hub. I led phases of discovery, user research, wireframing, navigation, interface design, CMS architecture & taxonomy.</p>
           <a class="cta" href="https://gpb.org"><span>GPB.org</span><svg><use href="#arrow-icon"></use></svg></a>
         </div>
       </section>
