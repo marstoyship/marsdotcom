@@ -317,8 +317,8 @@
     font-weight: 320;
   }
 
-  .card-quote + *,
-  .card + * {
+  .card-quote,
+  .card {
     margin-block-start: 3.75rem;
   }
 
