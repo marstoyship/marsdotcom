@@ -479,6 +479,16 @@
 
   /* }}} */
 
+  /* Letter {{{2 */
+
+  .letter {
+    padding-block: 2.5em;
+    padding-inline: 2.08em;
+    margin-block-start: 2.5em;
+  }
+
+  /* }}} */
+
   /* Footer {{{2 */
 
   footer .cta {
