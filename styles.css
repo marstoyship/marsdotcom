@@ -290,13 +290,17 @@
   }
 
   :where(#main-content section) {
-    padding-inline: 1rem;
-    padding-block: 3.75rem;
+    padding-inline: 0.6em;
+    padding-block: 2.5em;
 
     & > * {
       max-inline-size: 55rem;
       margin-inline: auto;
     }
+  }
+
+  :where(#main-content section:last-child) {
+    padding-block-end: 6.25em;
   }
 
   .section-white {
@@ -444,6 +448,7 @@
     gap: 1ch;
     padding-inline: 1.4em;
     padding-block: 0.75em;
+    block-size: min-content;
     font-size: 0.9em;
     font-weight: 700;
     color: white;
@@ -491,11 +496,31 @@
 
   /* Footer {{{2 */
 
-  footer .cta {
-    font-size: 1.315em;
+  .site-footer {
+    position: relative;
+    display: grid;
+    padding-block: 4.5em 2.29em;
+    padding-inline: 4.16em;
+    grid-template-columns: auto min-content;
+    background-image: url(/assets/bg-mars.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+
+    & .cta {
+      position: absolute;
+      inset-inline-start: 50%;
+      inset-block: -2em;
+      transform: translateX(-50%);
+      justify-content: center;
+      inline-size: calc(100vw - 0.6em);
+      max-inline-size: 55rem;
+      font-size: 1.315em;
+      padding-block: 1.1em;
+    }
   }
 
   /* }}} */
+
 } /* }}} */
 
 /* vim: fdm=marker
