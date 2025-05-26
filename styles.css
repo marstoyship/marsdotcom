@@ -89,12 +89,12 @@
 @layer base { /* {{{ */
   @font-face {
     font-family: "AlbertSans";
-    src: url(/assets/AlbertSans.woff2);
+    src: url(./assets/AlbertSans.woff2);
   }
 
   @font-face {
     font-family: "SourceSans3";
-    src: url(/assets/SourceSans3.woff2);
+    src: url(./assets/SourceSans3.woff2);
   }
 
   @view-transition {
@@ -313,7 +313,7 @@
 
   .mars-background {
     background-color: var(--primary-accent-color);
-    background-image: url(/assets/bg-mars.jpg);
+    background-image: url(./assets/bg-mars.jpg);
     background-size: cover;
     background-attachment: fixed;
   }
@@ -501,7 +501,7 @@
     padding-block: 4.5em 2.29em;
     padding-inline: 4.16em;
     grid-template-columns: auto min-content;
-    background-image: url(/assets/bg-mars.jpg);
+    background-image: url(./assets/bg-mars.jpg);
     background-size: cover;
     background-attachment: fixed;
 
