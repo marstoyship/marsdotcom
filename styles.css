@@ -494,6 +494,21 @@
 
   /* }}} */
 
+  /* Our clients {{{2 */
+  /* TODO Delete this after refactoring layouts to be more flexible. */
+
+  .our-clients {
+    margin-block-start: 1.875rem;
+    row-gap: 0;
+
+    & ul {
+      margin-block: 0;
+      flex: 1 1 26rem;
+    }
+  }
+
+  /* }}} */
+
   /* Footer {{{2 */
 
   .site-footer {
