@@ -290,7 +290,7 @@
   }
 
   :where(#main-content section) {
-    padding-inline: 0.6em;
+    padding-inline: 1.2rem;
     padding-block: 2.5em;
 
     & > * {
