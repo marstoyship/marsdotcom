@@ -148,6 +148,10 @@
     font-weight: 700;
     list-style-type: none;
   }
+
+  abbr[title] {
+    text-decoration: none;
+  }
 } /* }}} */
 
 @layer utility { /* {{{ */
