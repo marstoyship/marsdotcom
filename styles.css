@@ -207,10 +207,10 @@
   @media screen and (width >= 41.25em) {
     body > header {
       grid-template-areas:
-        " . nav nav nav nav . "
-        " . . title . portrait . "
-        " . . callout . portrait .";
-      grid-template-columns: auto  auto  35.57em auto 15.125rem auto;
+        " . nav nav nav . "
+        " . title . portrait . "
+        " . callout . portrait .";
+      grid-template-columns: 1fr minmax(auto, 23em) minmax(auto, 4.16em) 15.125em 1fr;
 
       & > .portrait {
         padding-inline-start: 0;
