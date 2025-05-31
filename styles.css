@@ -549,7 +549,7 @@
       inset-block: -2em;
       transform: translateX(-50%);
       justify-content: center;
-      inline-size: calc(100vw - 0.6em);
+      inline-size: calc(100vw - 2.4rem);
       max-inline-size: 55rem;
       font-size: 1.25em;
       font-weight: 600;
