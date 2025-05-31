@@ -148,6 +148,10 @@
     font-weight: 700;
     list-style-type: none;
   }
+
+  abbr[title] {
+    text-decoration: none;
+  }
 } /* }}} */
 
 @layer utility { /* {{{ */
@@ -203,10 +207,10 @@
   @media screen and (width >= 41.25em) {
     body > header {
       grid-template-areas:
-        " . nav nav nav nav . "
-        " . . title . portrait . "
-        " . . callout . portrait .";
-      grid-template-columns: auto  auto  35.57em auto 15.125rem auto;
+        " . nav nav nav . "
+        " . title . portrait . "
+        " . callout . portrait .";
+      grid-template-columns: 1fr minmax(auto, 23em) minmax(auto, 4.16em) 15.125em 1fr;
 
       & > .portrait {
         padding-inline-start: 0;
@@ -270,6 +274,10 @@
     & a {
       color: white;
       text-decoration: none;
+
+      &:hover {
+        text-decoration-line: underline;
+      }
     }
 
     & a[aria-current="page"] {
@@ -366,6 +374,11 @@
     grid-area: content;
     padding-inline: 1.6em;
     padding-block-end: 2.16em;
+  }
+
+  .card__title {
+    font-size: 1.25em;
+    font-weight: 600;
   }
 
   .card__description {
@@ -468,16 +481,18 @@
   .icon-list {
     font-size: 1.25em;
     font-weight: 600;
+    font-family: var(--albert-sans);
     padding-inline-start: 0;
     margin-block-start: 4.16em;
-    gap: 3ch;
+    gap: 1ch;
     max-inline-size: 65rem;
 
     & > li {
       display: flex;
       flex-flow: column nowrap;
       align-items: center;
-      max-inline-size: 9ch;
+      inline-size: min-content;
+      min-inline-size: 7ch;
       gap: 1.58em;
     }
   }
@@ -520,30 +535,40 @@
     background-size: cover;
     background-attachment: fixed;
 
+    & a {
+      font-weight: 700;
+
+      &:hover {
+        text-decoration-line: underline;
+      }
+    }
+
     & .cta {
       position: absolute;
       inset-inline-start: 50%;
       inset-block: -2em;
       transform: translateX(-50%);
       justify-content: center;
-      inline-size: calc(100vw - 0.6em);
+      inline-size: calc(100vw - 2.4rem);
       max-inline-size: 55rem;
-      font-size: 1.315em;
+      font-size: 1.25em;
+      font-weight: 600;
       padding-block: 1.1em;
     }
 
     & h2 {
-      margin-block-start: 3.875em;
+      font-size: 1.67em;
+      margin-block-start: 1.6em;
     }
 
     & .contact {
+      font-size: 0.84em;
       margin-block-start: 2.2em;
     }
   }
 
   .social-list {
-    font-weight: 700;
-    font-size: 0.8em;
+    font-size: 0.84em;
     padding-inline-start: 0;
     inline-size: max-content;
     margin-block-start: 2.2em;
