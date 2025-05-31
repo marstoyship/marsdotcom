@@ -530,7 +530,6 @@
     position: relative;
     padding-block: 4.5em 2.29em;
     padding-inline: 4.16em;
-    grid-template-columns: auto min-content;
     background-image: url(./assets/bg-mars.jpg);
     background-size: cover;
     background-attachment: fixed;
@@ -585,8 +584,11 @@
   }
 
   @media screen and (width >= 25em) {
-    .site-footer {
+    .site-footer__inner {
       display: grid;
+      grid-template-columns: auto min-content;
+      max-inline-size: 45em;
+      margin-inline: auto;
     }
 
     .social-list {
