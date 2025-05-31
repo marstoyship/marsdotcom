@@ -481,16 +481,18 @@
   .icon-list {
     font-size: 1.25em;
     font-weight: 600;
+    font-family: var(--albert-sans);
     padding-inline-start: 0;
     margin-block-start: 4.16em;
-    gap: 3ch;
+    gap: 1ch;
     max-inline-size: 65rem;
 
     & > li {
       display: flex;
       flex-flow: column nowrap;
       align-items: center;
-      max-inline-size: 9ch;
+      inline-size: min-content;
+      min-inline-size: 7ch;
       gap: 1.58em;
     }
   }
