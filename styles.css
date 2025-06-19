@@ -134,7 +134,26 @@
   }
 
   a {
+    text-decoration: none;
     color: var(--primary-accent-color);
+  }
+
+  a:not([class]) {
+    position: relative;
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      inset-inline-start: 0;
+      inset-block-start: 1lh;
+      block-size: 0.1em;
+      inline-size: 100%;
+      background-color: currentColor;
+      transition: inset 150ms ease;
+    }
+    &:hover::after {
+      inset-block-start: 1.25em;
+    }
   }
 
   li::marker {
@@ -273,20 +292,38 @@
 
     & a {
       color: white;
-      text-decoration: none;
-
-      &:hover {
-        text-decoration-line: underline;
-      }
     }
 
-    & a[aria-current="page"] {
-      text-decoration: underline;
+    & a[aria-current="page"]::after {
+      background-color: currentColor;
     }
 
     & .callout {
       color: black;
     }
+  }
+
+  .logo__link span,
+  .main-navigation__link {
+    position: relative;
+  }
+
+  .logo__link span::after,
+  .main-navigation__link::after {
+    content: "";
+    display: block;
+    position: absolute;
+    inset-inline-start: 0;
+    inset-block-start: 1lh;
+    block-size: 0.1em;
+    inline-size: 100%;
+    transition: background-color 150ms ease;
+    background-color: transparent;
+  }
+
+  .logo__link:hover span::after,
+  .main-navigation__link:hover::after {
+    background-color: currentColor;
   }
 
   .page-me > header {
@@ -536,10 +573,6 @@
 
     & a {
       font-weight: 700;
-
-      &:hover {
-        text-decoration-line: underline;
-      }
     }
 
     & .cta {
@@ -580,6 +613,25 @@
       display: flex;
       align-items: center;
       gap: 1ch;
+    }
+
+    & > li a span {
+      position: relative;
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        inset-inline-start: 0;
+        inset-block-start: 1lh;
+        block-size: 0.1em;
+        inline-size: 100%;
+        background-color: currentColor;
+        transition: inset 150ms ease;
+      }
+    }
+
+    & > li a:hover span::after {
+      inset-block-start: 1.25em;
     }
   }
 
