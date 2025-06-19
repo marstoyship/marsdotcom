@@ -504,10 +504,21 @@
     color: white;
     text-decoration: none;
     background-color: black;
+    transition: transform 150ms ease, box-shadow 150ms ease;
+
+    &:hover {
+      transform: translateY(-0.25em);
+      box-shadow: 0 0.2em 0.2em rgba(0, 0, 0, 0.43);
+    }
 
     & > svg {
       inline-size: 1.15em;
       block-size: 0.75em;
+      transition: transform 150ms ease;
+    }
+
+    &:hover svg {
+      transform: translateX(0.5ch);
     }
   }
 
@@ -586,6 +597,10 @@
       font-size: 1.25em;
       font-weight: 600;
       padding-block: 1.1em;
+    }
+
+    & .cta:hover {
+      transform: translate(-50%, -0.5ch);
     }
 
     & h2 {
