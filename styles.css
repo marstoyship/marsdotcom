@@ -665,6 +665,28 @@
 
   /* }}} */
 
+  /* Logo {{{2 */
+
+  @keyframes spin {
+    from {
+      transform: rotate(0);
+    }
+    to {
+      transform: rotate(1turn);
+    }
+  }
+
+  .logo-graphic {
+    overflow: visible;
+  }
+
+  .logo-graphic__orbs {
+    transform-origin: center;
+    animation: spin 30s 0s linear infinite;
+  }
+
+  /* }}} */
+
 } /* }}} */
 
 /* vim: fdm=marker
