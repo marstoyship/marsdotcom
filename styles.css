@@ -363,6 +363,11 @@
     background-attachment: fixed;
   }
 
+  .me-list-item {
+    flex-grow: 1;
+    flex-basis: 24ch;
+  }
+
   /* }}} */
 
   /* Callout {{{2 */
