@@ -573,6 +573,11 @@
       margin-block: 0;
       flex: 1 1 26rem;
     }
+
+    & strong {
+      font-family: var(--albert-sans);
+      font-weight: 599;
+    }
   }
 
   /* }}} */
