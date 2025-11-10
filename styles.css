@@ -331,6 +331,15 @@
     background-color: currentColor;
   }
 
+  .main-navigation__link--has-icon::after {
+    inline-size: calc(100% - 1.25em);
+  }
+
+  .main-navigation__link--has-icon svg {
+    position: relative;
+    inset-block-start: 0.15em;
+  }
+
   .page-me > header {
     background-color: white;
   }
