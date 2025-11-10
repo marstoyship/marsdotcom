@@ -168,6 +168,11 @@
     list-style-type: none;
   }
 
+  svg {
+    inline-size: 1em;
+    block-size: 1em;
+  }
+
   abbr[title] {
     text-decoration: none;
   }
@@ -516,14 +521,16 @@
       box-shadow: 0 0.2em 0.2em rgba(0, 0, 0, 0.43);
     }
 
-    & > svg {
-      inline-size: 1.15em;
-      block-size: 0.75em;
-      transition: transform 150ms ease;
-    }
+    &:has(use[href="#arrow-icon"]) {
+      & > svg {
+        inline-size: 1.15em;
+        block-size: 0.75em;
+        transition: transform 150ms ease;
+      }
 
-    &:hover svg {
-      transform: translateX(0.5ch);
+      &:hover svg {
+        transform: translateX(0.5ch);
+      }
     }
   }
 
