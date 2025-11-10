@@ -168,7 +168,7 @@
     list-style-type: none;
   }
 
-  svg {
+  svg:not([width]) {
     inline-size: 1em;
     block-size: 1em;
   }
