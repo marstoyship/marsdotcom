@@ -680,6 +680,7 @@
     .site-footer__inner {
       display: grid;
       grid-template-columns: auto min-content;
+      gap: 3ch;
       max-inline-size: 45em;
       margin-inline: auto;
     }
