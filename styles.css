@@ -214,6 +214,7 @@
     & > h1 {
       grid-area: title;
       padding-block-end: 0.45lh;
+      max-inline-size: 22ch;
     }
 
     & .portrait {
