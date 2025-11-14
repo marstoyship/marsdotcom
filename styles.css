@@ -259,6 +259,8 @@
   .main-navigation ul {
     display: flex;
     align-items: center;
+    flex-flow: row wrap;
+    gap: 1ch;
 
     & .logo {
       margin-inline-end: auto;
@@ -274,9 +276,8 @@
       }
     }
 
-    & li:not(.logo) + li::before {
-      content: "•";
-      padding-inline: 1ch;
+    & li {
+      text-wrap: nowrap;
     }
   }
 
