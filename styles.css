@@ -369,7 +369,12 @@
   }
 
   .section-black {
+    color: white;
     background-color: black;
+
+    & a {
+      color: white;
+    }
   }
 
   .section-light {
@@ -585,7 +590,6 @@
     font-weight: 366;
     line-height: 1.4;
     letter-spacing: -1%;
-    color: white;
 
     & * {
       margin-block: 0;
@@ -606,7 +610,6 @@
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
-    align-items: center;
     column-gap: 1ch;
 
     & > * {
@@ -620,7 +623,7 @@
     transition: transform 150ms ease;
   }
 
-  .promo__content:hover .promo__icon {
+  a:hover .promo__icon {
     transform: translateX(0.5ch);
   }
 
