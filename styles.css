@@ -554,6 +554,35 @@
     }
   }
 
+  .cta__overlap-wrapper {
+    position: relative;
+
+    & .cta {
+      position: absolute;
+      inset-inline-start: 50%;
+      inset-block: -2em;
+      transform: translateX(-50%);
+      justify-content: center;
+      inline-size: calc(100vw - 2.4rem);
+      max-inline-size: 55rem;
+      font-size: 1.25em;
+      font-weight: 600;
+      padding-block: 1.1em;
+    }
+
+    & .cta:hover {
+      transform: translate(-50%, -0.5ch);
+    }
+
+    & .cta + * {
+      margin-block-start: 3.5em;
+    }
+  }
+
+  .cta__overlap-pre-section {
+    padding-block-end: 6.6em;
+  }
+
   /* }}} */
 
   /* Icon list {{{2 */
@@ -629,6 +658,56 @@
 
   /* }}} */
 
+  /* Two up list {{{2 */
+
+  .two-up-list {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 2em;
+    line-height: 1.8;
+
+    & a {
+      display: block;
+      max-inline-size: 30ch;
+      color: black;
+      text-decoration-line: underline;
+
+      &::after {
+        content: none;
+      }
+
+      &:hover {
+        text-decoration-thickness: 0.08em;
+      }
+    }
+
+    & svg {
+      block-size: 0.83333333em;
+      inline-size: 0.83333333em;
+      margin-inline-start: 0.75ch;
+    }
+  }
+
+  .two-up-list__item {
+    flex: 1 1 45%;
+    max-inline-size: 25.625em;
+  }
+
+  .two-up-list__heading {
+    margin-block-start: 0;
+  }
+
+  .two-up-list__list {
+    margin-block: 1.25em 0;
+    padding-inline-start: 2ch;
+  }
+
+  a.two-up-list__link-long {
+    max-inline-size: 32ch;
+  }
+
+  /* }}} */
+
   /* Letter {{{2 */
 
   .letter {
@@ -671,23 +750,6 @@
 
     & a {
       font-weight: 700;
-    }
-
-    & .cta {
-      position: absolute;
-      inset-inline-start: 50%;
-      inset-block: -2em;
-      transform: translateX(-50%);
-      justify-content: center;
-      inline-size: calc(100vw - 2.4rem);
-      max-inline-size: 55rem;
-      font-size: 1.25em;
-      font-weight: 600;
-      padding-block: 1.1em;
-    }
-
-    & .cta:hover {
-      transform: translate(-50%, -0.5ch);
     }
 
     & h2 {
