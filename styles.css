@@ -310,6 +310,12 @@
     }
   }
 
+  .main-navigation__link svg:has(use[href="#external-link-icon"]) {
+    inline-size: 0.75em;
+    block-size: 0.75em;
+    color: white;
+  }
+
   .logo__link span,
   .main-navigation__link {
     position: relative;
@@ -551,6 +557,10 @@
       &:hover svg {
         transform: translateX(0.5ch);
       }
+    }
+
+    & use[href="#external-link-icon"] {
+      color: #e04e2b;
     }
   }
 
