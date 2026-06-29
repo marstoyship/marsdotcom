@@ -584,10 +584,6 @@
     & .cta:hover {
       transform: translate(-50%, -0.5ch);
     }
-
-    & .cta + * {
-      margin-block-start: 3.5em;
-    }
   }
 
   .cta__overlap-pre-section {
@@ -765,7 +761,7 @@
 
     & h2 {
       font-size: 1.67em;
-      margin-block-start: 1.6em;
+      margin-block-start: 1.1em;
     }
 
     & .contact {
@@ -820,7 +816,7 @@
     }
 
     .social-list {
-      margin-block-start: 0.8rem;
+      margin-block: 0;
     }
   }
 
